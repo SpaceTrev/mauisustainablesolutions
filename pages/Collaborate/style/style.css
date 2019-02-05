@@ -9,9 +9,8 @@ a, a:focus, a:hover {
   border: .05rem solid #fff;
 }
 
-.card-button {
-  height: 50%;
-  width: 50%;
+.card {
+  background-color: #333;
 }
 
 html, body {
@@ -19,19 +18,12 @@ html, body {
   background-color: #333;
 }
 
-.index-body {
-  background-image: url(../resources/images/woah.jpg);
-  background-size: cover;
-}
-
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-}
-
-.statement-heading {
-  background-color: rgba(28, 28, 28, .6);
+  background-image: url(../../../resources/images/roadToHana.jpg);
+  background-size: cover;
 }
 
 .site-wrapper {
@@ -86,6 +78,15 @@ body {
   border-bottom-color: #fff;
 }
 
+.collab-cov {
+  background-color: rgba(28, 28, 28, .6);
+}
+
+.cover-heading {
+  padding-top: 20px;
+}
+/* Mobile Responsiveness */
+
 @media (min-width: 48em) {
   .masthead-brand {
     float: left;
@@ -104,21 +105,12 @@ body {
   font-weight: bold;
 }
 
-.learn-btn {
+.contact-btn {
   margin-bottom: 20px;
-}
-
-.cover-heading {
-  padding-top: 20px;
 }
 
 .mastfoot {
   color: rgba(255, 255, 255, .5);
-}
-
-.mapouter {
-  margin-bottom: 20;
-  margin-top: 20;
 }
 
 @media (min-width: 40em) {
