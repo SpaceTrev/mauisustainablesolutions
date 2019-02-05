@@ -27,15 +27,15 @@ a:hover {
  */
  .front-body {
   background-image: url(../../../resources/images/roadToHana.jpg);
-  background-size:100% auto;
+  background-size: cover;
  }
  .index-body{
   background-image: url(../../../resources/images/woah.jpg);
-  background-size:100% auto;
+  background-size: cover;
  }
  .map-body {
   background-image: url(../../../resources/images/wavywavy.jpg);
-  background-size:100% auto;
+  background-size: cover;
  }
 
 html,
