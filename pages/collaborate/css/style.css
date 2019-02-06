@@ -1,0 +1,195 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../resources/images/kamaianavalley.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar-dark {
+    background-color: rgba(28, 28, 28, .4);
+}
+
+.mastfoot {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: rgba(255, 255, 255, .8) !important;
+    background-color: rgba(28, 28, 28, .4);
+    text-align: center;
+}
+
+.footer-link {
+    margin-top: 10px;
+}
+
+.link-style {
+    text-decoration: none !important;
+    color: rgba(220, 220, 220, .8);
+}
+
+.link-style:hover {
+    text-decoration: none !important;
+    color: #31b0d5;
+}
+
+.navbar {
+    margin-top: -24px;
+}
+
+.navbar-brand {
+    margin-left: 47px;
+}
+
+.navbar-nav {
+    margin-right: 47px;
+}
+
+.statement-heading {
+    background-color: rgba(28, 28, 28, .6);
+    border-color: #31b0d5;
+}
+
+.statement-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.coming-soon-container {
+    color: rgba(220, 220, 220, .8);
+    width: 300px; padding: 20px;
+}
+
+.btn-outline-light {
+    color: #fff;
+    border-color: #31b0d5;
+}
+
+.btn-outline-light:hover {
+    background-color: #31b0d5;
+    color: #fff;
+    border-color: #31b0d5;
+}
+
+.cover-heading {
+    color: #31b0d5 !important;
+    margin-top: 27px;
+    text-shadow: .5px .5px #fff;
+}
+
+.intro-para {
+    text-shadow: 1px 1px #31b0d5;
+}
+
+.card {
+    border-color: #31b0d5;
+    background-color: rgba(28, 28, 28, .6);
+}
+
+.card-deck {
+    margin-top: 150px;
+}
+
+.card-title {
+    color: #31b0d5;
+    /* text-shadow: .5px .5px #fff; */
+}
+
+.card-text {
+    color: #fff;
+    /* text-shadow: 1px 1px #31b0d5; */
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar-brand {
+        margin-left: 10px;
+    }
+    .navbar-nav {
+        margin-right: 10px;
+    }
+    .card-deck {
+        margin-top: 80px;
+    }
+    .card {
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 579px) {
+    .intro-para {
+        font-size: 18px !important;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .card-deck {
+        margin-top: -10px;
+    }
+    .card-text {
+        font-size: 14px;
+    }
+    .card-title {
+        font-size: 20px;
+    }
+    .card-button {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 467px) {
+    .card-text {
+        font-size: 12px;
+    }
+    .card-title {
+        font-size: 18px;
+    }
+    .card-button {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 439px) {
+    .cover-heading {
+        font-size: 30px !important;
+    }
+    .intro-para {
+        font-size: 16px !important;
+    }
+}
+
+@media only screen and (max-width: 416px) {
+    .cover-heading {
+        font-size: 24px !important;
+    }
+    .intro-para {
+        font-size: 14px !important;
+    }
+    .card-text {
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .footer-link {
+        font-size: 14px !important;
+    }
+}
+
+@media only screen and (max-width: 345px) {
+    .cover-heading {
+        font-size: 20px !important;
+    }
+    .intro-para {
+        font-size: 12px !important;
+    }
+}
