@@ -92,6 +92,7 @@ body {
     border-color: #31b0d5;
     background-color: rgba(28, 28, 28, .6);
     /* padding: 30px; */
+    margin-bottom: 120px !important;
 }
 
 .card-deck {
@@ -126,9 +127,6 @@ body {
     }
     .card-deck {
         margin-top: 80px;
-    }
-    .card {
-        margin-top: 10px;
     }
     .card-text {
         font-size: 16px;
@@ -168,10 +166,6 @@ body {
     }
     .card-button {
         font-size: 10px;
-    }
-    .card {
-        margin-top: -20px;
-        margin-bottom: 100px;
     }
 }
 
