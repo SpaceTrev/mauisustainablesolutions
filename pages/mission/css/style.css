@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+    height: 100% !important;
     margin: 0;
     padding: 0;
 }
@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url(../../../resources/images/kam3viw.jpg);
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
