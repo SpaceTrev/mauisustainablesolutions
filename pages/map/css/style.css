@@ -93,7 +93,7 @@ body {
     border-color: #31b0d5;
     background-color: rgba(28, 28, 28, .6);
     /* padding: 30px; */
-    margin-bottom: 120px !important;
+    padding-bottom: 120px !important;
 }
 
 .card-deck {
