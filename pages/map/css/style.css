@@ -91,7 +91,7 @@ body {
 .card {
     border-color: #31b0d5;
     background-color: rgba(28, 28, 28, .6);
-    padding: 30px;
+    /* padding: 30px; */
 }
 
 .card-deck {
@@ -168,6 +168,9 @@ body {
     }
     .card-button {
         font-size: 10px;
+    }
+    .card {
+        margin-top: -20px;
     }
 }
 
