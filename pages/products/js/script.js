@@ -55,13 +55,13 @@
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "100%",
+                //   "max-width": "100%",
                   "margin-left": "20px",
                   "margin-bottom": "50px"
                 }
               },
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -83,7 +83,7 @@
             },
             styles: {
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -108,29 +108,26 @@
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "100%",
+                //   "max-width": "100%",
                   "margin-left": "0px",
                   "margin-bottom": "0px"
                 }
               },
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
                 ":focus": {
                   "background-color": "#117787"
                 },
-                "@media (max-width: 601px)": {
-                  "font-size": "10px"
-                }
               }
             }
           },
           toggle: {
             styles: {
               toggle: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -212,13 +209,13 @@
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "100%",
+                //   "max-width": "100%",
                   "margin-left": "20px",
                   "margin-bottom": "50px"
                 }
               },
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -240,7 +237,7 @@
             },
             styles: {
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -265,29 +262,26 @@
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "100%",
+                //   "max-width": "100%",
                   "margin-left": "0px",
                   "margin-bottom": "0px"
                 }
               },
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
                 ":focus": {
                   "background-color": "#117787"
                 },
-                "@media (max-width: 601px)": {
-                  "font-size": "10px"
-                }
               }
             }
           },
           toggle: {
             styles: {
               toggle: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -369,13 +363,13 @@
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "100%",
+                //   "max-width": "100%",
                   "margin-left": "20px",
                   "margin-bottom": "50px"
                 }
               },
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -397,7 +391,7 @@
             },
             styles: {
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
@@ -422,29 +416,26 @@
             styles: {
               product: {
                 "@media (min-width: 601px)": {
-                  "max-width": "100%",
+                //   "max-width": "100%",
                   "margin-left": "0px",
                   "margin-bottom": "0px"
                 }
               },
               button: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
                 ":focus": {
                   "background-color": "#117787"
                 },
-                "@media (max-width: 601px)": {
-                  "font-size": "10px"
-                }
               }
             }
           },
           toggle: {
             styles: {
               toggle: {
-                "background-color": "#138496",
+                "background-color": "#31b0d5",
                 ":hover": {
                   "background-color": "#117787"
                 },
