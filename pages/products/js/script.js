@@ -67,6 +67,9 @@
                 },
                 ":focus": {
                   "background-color": "#117787"
+                },
+                "@media (max-width: 601px)": {
+                  "font-size": "10px"
                 }
               },
               compareAt: {
@@ -117,6 +120,9 @@
                 },
                 ":focus": {
                   "background-color": "#117787"
+                },
+                "@media (max-width: 601px)": {
+                  "font-size": "10px"
                 }
               }
             }
@@ -218,6 +224,9 @@
                 },
                 ":focus": {
                   "background-color": "#117787"
+                },
+                "@media (max-width: 601px)": {
+                  "font-size": "10px"
                 }
               },
               compareAt: {
@@ -268,6 +277,9 @@
                 },
                 ":focus": {
                   "background-color": "#117787"
+                },
+                "@media (max-width: 601px)": {
+                  "font-size": "10px"
                 }
               }
             }
@@ -369,6 +381,9 @@
                 },
                 ":focus": {
                   "background-color": "#117787"
+                },
+                "@media (max-width: 601px)": {
+                  "font-size": "10px"
                 }
               },
               compareAt: {
@@ -419,6 +434,9 @@
                 },
                 ":focus": {
                   "background-color": "#117787"
+                },
+                "@media (max-width: 601px)": {
+                  "font-size": "10px"
                 }
               }
             }

@@ -104,18 +104,27 @@ body {
     /* text-shadow: 1px 1px #31b0d5; */
 }
 
+@media only screen and (max-width: 991px) {
+    .card {
+        margin-top: 10px;
+    }
+    .card-deck {
+        margin-top: 80px;
+    }
+    .card1 {
+        margin-right: -10px !important;
+    }
+    .card2 {
+        margin-left: -10px !important;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .navbar-brand {
         margin-left: 10px;
     }
     .navbar-nav {
         margin-right: 10px;
-    }
-    .card-deck {
-        margin-top: 80px;
-    }
-    .card {
-        margin-top: 10px;
     }
 }
 
@@ -140,6 +149,12 @@ body {
     }
     .card {
         padding: 20px;
+    }
+    .card1 {
+        margin-right: 0px !important;
+    }
+    .card2 {
+        margin-left: 0px !important;
     }
 }
 
