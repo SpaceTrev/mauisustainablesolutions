@@ -8,7 +8,6 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     overflow: scroll;
-
 }
 
 body {
@@ -32,6 +31,32 @@ body {
     margin-top: 10px;
 }
 
+.overlayd {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #31b0d5
+}
+
+.insta-border {
+    color: #31b0d5;
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    height: 70px;
+    width: 300px !important;
+  }
+
+.container:hover .overlayd {
+    opacity: .8;
+}
+
 .link-style {
     text-decoration: none !important;
     color: rgba(220, 220, 220, .8);
@@ -40,6 +65,31 @@ body {
 .link-style:hover {
     text-decoration: none !important;
     color: #31b0d5;
+}
+
+.insta-text {
+    line-height: 70px !important;
+    color: #fff;
+}
+
+.button-overlay {
+    margin-top: 20px !important;
+  }
+
+
+.text {
+    color: black;
+    font-size: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.button-overlay {
+    margin-top: 20px !important;
 }
 
 .navbar {
