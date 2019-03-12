@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     max-height: 100%;
@@ -44,6 +45,10 @@ body {
     background-color: #31b0d5
 }
 
+.instafeed {
+    background-color: rgba(28, 28, 28, .6);
+}
+
 .insta-border {
     color: #31b0d5;
     text-align: center;
@@ -51,7 +56,7 @@ body {
     margin: 0 auto;
     height: 70px;
     width: 300px !important;
-  }
+}
 
 .container:hover .overlayd {
     opacity: .8;
@@ -74,7 +79,7 @@ body {
 
 .button-overlay {
     margin-top: 20px !important;
-  }
+}
 
 
 .text {
@@ -164,12 +169,15 @@ body {
     .navbar-brand {
         margin-left: 10px;
     }
+
     .navbar-nav {
         margin-right: 10px;
     }
+
     .card-deck {
         margin-top: 80px;
     }
+
     .card {
         margin-top: 10px;
     }
@@ -185,12 +193,15 @@ body {
     .card-deck {
         margin-top: -10px;
     }
+
     .card-text {
         font-size: 14px;
     }
+
     .card-title {
         font-size: 20px;
     }
+
     .card-button {
         font-size: 12px;
     }
@@ -200,9 +211,11 @@ body {
     .card-text {
         font-size: 12px;
     }
+
     .card-title {
         font-size: 18px;
     }
+
     .card-button {
         font-size: 10px;
     }
@@ -212,6 +225,7 @@ body {
     .cover-heading {
         font-size: 30px !important;
     }
+
     .intro-para {
         font-size: 16px !important;
     }
@@ -221,9 +235,11 @@ body {
     .cover-heading {
         font-size: 24px !important;
     }
+
     .intro-para {
         font-size: 14px !important;
     }
+
     .card-text {
         font-size: 11px;
     }
@@ -239,6 +255,7 @@ body {
     .cover-heading {
         font-size: 20px !important;
     }
+
     .intro-para {
         font-size: 12px !important;
     }
