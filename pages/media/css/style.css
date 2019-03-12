@@ -77,11 +77,6 @@ body {
     color: #fff;
 }
 
-.button-overlay {
-    margin-top: 20px !important;
-}
-
-
 .text {
     color: black;
     font-size: 10px;
@@ -95,6 +90,20 @@ body {
 
 .button-overlay {
     margin-top: 20px !important;
+    text-align: center;
+}
+
+.container-img {
+    position: relative;
+    /* width: 50%; */
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 100%; */
+    /* height: auto; */
 }
 
 .navbar {
