@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     max-height: 100%;
@@ -18,10 +19,7 @@ body {
 .navbar-dark {
     background-color: rgba(28, 28, 28, .5);
 }
-.img-fluid {
-    min-width: 100%;
-    min-height: 100%;
-}
+
 .mastfoot {
     position: fixed;
     bottom: 0;
@@ -69,7 +67,8 @@ body {
 
 .coming-soon-container {
     color: rgba(220, 220, 220, .8);
-    width: 300px; padding: 20px;
+    width: 300px;
+    padding: 20px;
 }
 
 .btn-outline-light {
@@ -113,18 +112,40 @@ body {
     /* text-shadow: 1px 1px #31b0d5; */
 }
 
+@media only screen and (max-width: 888px) {
+    .iframe {
+        width: 700px;
+        height: 500px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .navbar-brand {
         margin-left: 10px;
     }
+
     .navbar-nav {
         margin-right: 10px;
     }
+
     .card-deck {
         margin-top: 80px;
     }
+
     .card {
         margin-top: 10px;
+    }
+
+    .iframe {
+        width: 600px;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 656px) {
+    .iframe {
+        width: 500px;
+        height: 400px;
     }
 }
 
@@ -134,16 +155,33 @@ body {
     }
 }
 
+@media only screen and (max-width: 558px) {
+    .iframe {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 459px) {
+    .iframe {
+        width: 300px;
+        height: 300px;
+    }
+}
+
 @media only screen and (max-width: 575px) {
     .card-deck {
         margin-top: -10px;
     }
+
     .card-text {
         font-size: 14px;
     }
+
     .card-title {
         font-size: 20px;
     }
+
     .card-button {
         font-size: 12px;
     }
@@ -153,9 +191,11 @@ body {
     .card-text {
         font-size: 12px;
     }
+
     .card-title {
         font-size: 18px;
     }
+
     .card-button {
         font-size: 10px;
     }
@@ -165,6 +205,7 @@ body {
     .cover-heading {
         font-size: 30px !important;
     }
+
     .intro-para {
         font-size: 16px !important;
     }
@@ -174,9 +215,11 @@ body {
     .cover-heading {
         font-size: 24px !important;
     }
+
     .intro-para {
         font-size: 14px !important;
     }
+
     .card-text {
         font-size: 11px;
     }
@@ -192,6 +235,7 @@ body {
     .cover-heading {
         font-size: 20px !important;
     }
+
     .intro-para {
         font-size: 12px !important;
     }
