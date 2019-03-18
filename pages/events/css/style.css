@@ -18,7 +18,10 @@ body {
 .navbar-dark {
     background-color: rgba(28, 28, 28, .5);
 }
-
+.img-fluid {
+    min-width: 100%;
+    min-height: 100%;
+}
 .mastfoot {
     position: fixed;
     bottom: 0;
