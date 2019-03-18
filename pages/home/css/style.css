@@ -30,7 +30,15 @@ body {
 .footer-link {
     margin-top: 10px;
 }
-
+.card-3 {
+    margin-top: 20px;
+}
+.card-4 {
+    margin-top: 20px;
+}
+.card-deck {
+    margin-top: 80px !important;
+}
 .link-style {
     text-decoration: none !important;
     color: rgba(220, 220, 220, .8);
@@ -39,10 +47,6 @@ body {
 .link-style:hover {
     text-decoration: none !important;
     color: #31b0d5;
-}
-
-.navbar {
-    margin-top: -24px;
 }
 
 .navbar-brand {
