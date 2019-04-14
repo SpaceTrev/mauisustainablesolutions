@@ -78,20 +78,20 @@ document.getElementById('sustainForm').addEventListener('submit', submitToFireba
 // TODO: Add function to gather checkbox value as well as add to multi select data or make a key so it isn't just numbers
 function submitToFirebase(e) {
     e.preventDefault();
-    location_type_public = getInputVal('loc-type-public');
-    access_type = getInputVal('access-type')
-    location_type_nonprofit = getInputVal('loc-type-nonprofit')
-    location_type_small_business = getInputVal('loc-type-small-business')
-    location_type_corporate = getInputVal('loc-type-corporate')
-    location_type_government = getInputVal('loc-type-government')
-    water_refill = getInputVal('water-refill')
-    water_types = getInputVal('water-types')
+    location_type_public = getGridRadioVal('loc-type-public');
+    access_type = getSelectVal('access-type')
+    location_type_nonprofit = getGridRadioVal('loc-type-nonprofit')
+    location_type_small_business = getGridRadioVal('loc-type-small-business')
+    location_type_corporate = getGridRadioVal('loc-type-corporate')
+    location_type_government = getGridRadioVal('loc-type-government')
+    water_refill = getSelectVal('water-refill')
+    water_types = getSelectVal('water-types')
     water_ice = getInputVal('water-ice')
     water_shower = getInputVal('water-shower')
-    single_stream = getInputVal('recycling-single')
-    multi_stream = getInputVal('recycling-multi')
-    recycle_multi_type = getInputVal('recycling-multi-types')
-    recycling_redemption = getInputVal('recycling-redemption')
+    single_stream = getGridRadioVal('recycling-single')
+    multi_stream = getGridRadioVal('recycling-multi')
+    recycle_multi_types = getSelectVal('recycling-multi-types')
+    recycling_redemption = getGridRadioVal('recycling-redemption')
     food_container = getInputVal('food-container')
     food_container_retail = getInputVal('food-container-retail')
     food_vegan = getInputVal('food-vegan')
@@ -102,7 +102,7 @@ function submitToFirebase(e) {
     fair_trade = getInputVal('fair-trade')
     plastic_free = getInputVal('food-plastic-free')
     reduce_plastic = getInputVal('food-plastic-reduce')
-    food_reduce_types = getInputVal('food-reduce-types')
+    food_reduce_types = getSelectVal('food-reduce-types')
     composting = getInputVal('composting')
     green_waste = getInputVal('composting-green-waste')
     ev_charge_1 = getInputVal('ev-chargin-level-1')
@@ -112,9 +112,9 @@ function submitToFirebase(e) {
     health_products_local = getInputVal('health-products-local')
     health_services = getInputVal('health-services')
     health_wellness = getInputVal('health-wellness')
-    health_wellness_types = getInputVal('health-wellness-types')
+    health_wellness_types = getSelectVal('health-wellness-types')
     health_fitness = getInputVal('health-fitness')
-    health_fitness_types = getInputVal('health-fitness-types')
+    health_fitness_types = getSelectVal('health-fitness-types')
     health_medical = getInputVal('health-medical')
     health_other = getInputVal('health-other')
     nutrition_products = getInputVal('nutrition-products')
@@ -141,12 +141,18 @@ function submitToFirebase(e) {
     education_events = getInputVal('education-events')
     education_products = getInputVal('education-products')
     education_services = getInputVal('education-services')
-    restroom = getInputVal('restroom')
-    console.log(location_type_public, access_type, location_type_corporate, location_type_government, location_type_nonprofit, location_type_public, location_type_small_business, water_ice, water_refill, water_shower, water_types, single_stream, multi_stream, recycle_multi_type, recycling_redemption, food_container, food_container_retail, food_vegan, food_vegetarian, food_local, food_reduce_types, food_farm_table, farm_table_farm, fair_trade, reduce_plastic, plastic_free, composting, green_waste, ev_charge_1, ev_charge_2, ev_charge_3, health_products, health_products_local, health_services, health_medical, health_other, health_fitness, health_fitness_types, health_wellness, health_wellness_types, nutrition_products, nutrition_services, nutrition_other, recreation_services, recreation_products, recreation_other, transportation_sharing, transportation_electric, transportation_bus, transportation_shuttle, transportation_airport, transportation_other, energy_solar, energy_battery, energy_biodiesel, energy_hydrogen, energy_wind, energy_hydroelectric, energy_products, energy_services, education_info, education_events, education_products, education_services, restroom);
+    restroom = getSelectVal('restroom')
+    console.log(location_type_public, access_type, location_type_corporate, location_type_government, location_type_nonprofit, location_type_public, location_type_small_business, water_ice, water_refill, water_shower, water_types, single_stream, multi_stream, recycle_multi_types, recycling_redemption, food_container, food_container_retail, food_vegan, food_vegetarian, food_local, food_reduce_types, food_farm_table, farm_table_farm, fair_trade, reduce_plastic, plastic_free, composting, green_waste, ev_charge_1, ev_charge_2, ev_charge_3, health_products, health_products_local, health_services, health_medical, health_other, health_fitness, health_fitness_types, health_wellness, health_wellness_types, nutrition_products, nutrition_services, nutrition_other, recreation_services, recreation_products, recreation_other, transportation_sharing, transportation_electric, transportation_bus, transportation_shuttle, transportation_airport, transportation_other, energy_solar, energy_battery, energy_biodiesel, energy_hydrogen, energy_wind, energy_hydroelectric, energy_products, energy_services, education_info, education_events, education_products, education_services, restroom);
 }
 
 function getInputVal(id) {
-    return document.getElementById(id).value;
+    return [document.getElementById(id).name, document.getElementById(id).checked];
+}
+function getSelectVal(id) {
+    return [document.getElementById(id).name, document.getElementById(id).value];
+}
+function getGridRadioVal(id) {
+    return [document.getElementById(id).value, document.getElementById(id).checked];
 }
 
 // $("#submit-it").on("click", function (e) {
@@ -230,7 +236,7 @@ function getInputVal(id) {
 //      WaterShower: water_shower,
 //      SingleStream: single_stream,
 //      MultiStream: multi_stream,
-//      RecycleMultiType: recycle_multi_type,
+//      RecycleMultiType: recycle_multi_types,
 //      RecyclingRedemption: recycling_redemption,
 //      FoodContainer: food_container,
 //      FoodContainerRetail: food_container_retail,
