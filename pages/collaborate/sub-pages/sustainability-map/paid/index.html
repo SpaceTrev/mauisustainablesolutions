@@ -74,7 +74,7 @@
               <div class="form-group">
                 <label for="business-email" class="text-white">Email</label>
                 <input required type="email" class="form-control" id="business-email" aria-describedby="Email"
-                  name="Business Email" placeholder="Ex: joe@joe.meow"/>
+                  name="Business Email" placeholder="Ex: joe@joe.meow" />
               </div>
               <div class="form-group">
                 <label for="business-phone" class="text-white">Phone Number</label>
@@ -82,36 +82,42 @@
                   name="Business Phone Number" placeholder="Enter Business' Phone Number" />
               </div>
               <div class="form-check pb-1">
-                  <input class="form-check-input" type="checkbox" id="contact-included" name="Contact Included" value="Contact Included">
-                  <label class="form-check-label text-white" for="contact-included">
-                    Do you want your business phone number & email included on the map? (check for yes)
-                  </label>
-                </div>
+                <input class="form-check-input" type="checkbox" id="contact-included" name="Contact Included"
+                  value="Contact Included">
+                <label class="form-check-label text-white" for="contact-included">
+                    Permission to include the phone number & email provided on the sustainability map (check for yes)
+                </label>
+              </div>
             </div>
           </div>
-          <!-- <input class="form-check-input" type="text" name="Business Name" id="business-name"> -->
-          <!-- <label for="business-name" class="form-check-label text-white">Name of Business</label> -->
+          <div class="form-group row">
+              <div class="col-sm-2 text-white">Social Media & Website</div>
+              <div class="col-sm-10">
+                <div class="form-group">
+                  <label for="business-social-media" class="text-white">Social Media Handle(s)</label>
+                  <input required type="text" class="form-control" id="business-social-media" aria-describedby="Social Media"
+                    name="Business Social(s)" placeholder="Ex: @MauiSustainableSolutions (if multiple list 'Instagram: @instahandle, Twitter: @twithandle, etc.'" />
+                </div>
+                <div class="form-group">
+                  <label for="business-website" class="text-white">Website</label>
+                  <input required type="url" class="form-control" id="business-website" aria-describedby="Website"
+                    name="Business Website" placeholder="Ex: https://www.MauiSustainableSolutions.com" />
+                </div>
+                <div class="form-check pb-1">
+                  <input class="form-check-input" type="checkbox" id="socials-included" name="Socials Included"
+                    value="Socials Included">
+                  <label class="form-check-label text-white" for="contact-included">
+                    Permission to include the website & social media handle(s) provided on the sustainability map (check for yes)
+                  </label>
+                </div>
+              </div>
+            </div>
           <fieldset class="form-group">
             <div class="row">
               <legend class="col-form-label col-sm-2 pt-0 text-white">
                 Location Type
               </legend>
               <div class="col-sm-10">
-                <!-- <div class="form-check pb-1">
-                    <input class="form-check-input" type="radio" name="gridRadio" id="loc-type-public" value="Public">
-                    <label class="form-check-label text-white" for="loc-type-public">
-                      Public
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <select id="access-type" name="Access Type" class="custom-select">
-                      <option value="Beach" selected>Beach</option>
-                      <option value="Park">Park</option>
-                      <option value="Trail Head">Trail head</option>
-                      <option value="Bus Stop">Bus Stop</option>
-                    </select>
-                  </div> -->
-
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="gridRadio" id="loc-type-nonprofit"
                     value="Nonprofit" />
@@ -614,6 +620,9 @@
             </div>
           </div>
           <button id="submit" class="btn">Submit & Pay</button>
+          <!-- <button type="button" id="submit" class="btn ro-subscribe-btn"
+            onclick="window.location='https://maui-sustainable-solutions.myshopify.com/tools/checkout/buy_button/add_to_cart?p=3487791415382&v=27889088954454&g=96749&fn=1&ft=3&dp=$150.00&rdp=1&rup=15000'">Subscribe
+            Now!</button> -->
         </form>
       </div>
     </div>
