@@ -3,6 +3,9 @@ let business_name;
 let business_address;
 let location_type_public;
 let access_type;
+let business_phone;
+let business_email;
+let contact_included;
 let location_type_nonprofit;
 let location_type_small_business;
 let location_type_corporate;
@@ -76,13 +79,13 @@ const config = {
 firebase.initializeApp(config);
 let database = firebase.database();
 document.getElementById('sustainForm').addEventListener('submit', submitToFirebase);
-// TODO: Add function to gather checkbox value as well as add to multi select data or make a key so it isn't just numbers
 function submitToFirebase(e) {
     e.preventDefault();
-    // location_type_public = getGridRadioVal('loc-type-public');
-    // access_type = getSelectVal('access-type')
     business_name = getTextFieldVal('business-name');
     business_address = getTextFieldVal('business-address');
+    contact_included = getInputVal('contact-included');
+    business_phone = getTextFieldVal('business-phone');
+    business_email = getTextFieldVal('business-email');
     location_type_nonprofit = getGridRadioVal('loc-type-nonprofit')
     location_type_small_business = getGridRadioVal('loc-type-small-business')
     location_type_corporate = getGridRadioVal('loc-type-corporate')
@@ -145,15 +148,19 @@ function submitToFirebase(e) {
     education_products = getInputVal('education-products')
     education_services = getInputVal('education-services')
     restroom = getSelectVal('restroom')
-    console.log(business_name, business_address, location_type_corporate, location_type_government, location_type_nonprofit, location_type_small_business, water_ice, water_refill, water_shower, water_types, single_stream, multi_stream, recycle_multi_types, recycling_redemption, food_container, food_container_retail, food_vegan, food_vegetarian, food_local, food_reduce_types, food_farm_table, farm_table_farm, fair_trade, reduce_plastic, plastic_free, composting, green_waste, ev_charge_1, ev_charge_2, ev_charge_3, health_products, health_products_local, health_services, health_medical, health_other, health_fitness, health_fitness_types, health_wellness, health_wellness_types, nutrition_products, nutrition_services, nutrition_other, recreation_services, recreation_products, recreation_other, transportation_sharing, transportation_electric, transportation_bus, transportation_shuttle, transportation_airport, transportation_other, energy_solar, energy_battery, energy_biodiesel, energy_hydrogen, energy_wind, energy_hydroelectric, energy_products, energy_services, education_info, education_events, education_products, education_services, restroom);
+    console.log(business_name, business_address, business_email, business_phone, contact_included, location_type_corporate, location_type_government, location_type_nonprofit, location_type_small_business, water_ice, water_refill, water_shower, water_types, single_stream, multi_stream, recycle_multi_types, recycling_redemption, food_container, food_container_retail, food_vegan, food_vegetarian, food_local, food_reduce_types, food_farm_table, farm_table_farm, fair_trade, reduce_plastic, plastic_free, composting, green_waste, ev_charge_1, ev_charge_2, ev_charge_3, health_products, health_products_local, health_services, health_medical, health_other, health_fitness, health_fitness_types, health_wellness, health_wellness_types, nutrition_products, nutrition_services, nutrition_other, recreation_services, recreation_products, recreation_other, transportation_sharing, transportation_electric, transportation_bus, transportation_shuttle, transportation_airport, transportation_other, energy_solar, energy_battery, energy_biodiesel, energy_hydrogen, energy_wind, energy_hydroelectric, energy_products, energy_services, education_info, education_events, education_products, education_services, restroom);
+    
+    // return document.getElementById("sustainForm").reset(); 
 }
 
 function getInputVal(id) {
     return [document.getElementById(id).name, document.getElementById(id).checked];
 }
+
 function getTextFieldVal(id) {
     return [document.getElementById(id).name, document.getElementById(id).value];
 }
+
 function getSelectVal(id) {
     let selectedElement = document.getElementById(id);
     let selectedOptions = selectedElement.selectedOptions || [].filter.call(selectedElement.options, option => option.selected);

@@ -24,16 +24,18 @@ function submitPubToFirebase(e) {
     access_type = getSelectVal('access-type')
     public_space_name = getTextFieldVal('public-space-name');
     public_space_address = getTextFieldVal('public-space-address');
-  
+
     console.log(public_space_name, public_space_address, location_type_public, access_type);
 }
 
 function getInputVal(id) {
     return [document.getElementById(id).name, document.getElementById(id).checked];
 }
+
 function getTextFieldVal(id) {
     return [document.getElementById(id).name, document.getElementById(id).value];
 }
+
 function getSelectVal(id) {
     let selectedElement = document.getElementById(id);
     let selectedOptions = selectedElement.selectedOptions || [].filter.call(selectedElement.options, option => option.selected);
