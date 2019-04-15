@@ -8,6 +8,9 @@
   <link href="./css/style.css" rel="stylesheet">
   <script src="../../../../../deps/jquery.min.js" type="text/javascript"></script>
   <script src="../../../../../deps/bootstrap.js" type="text/javascript"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+
   <title>Maui Sustainable Solutions</title> 
 </head>
 
@@ -44,7 +47,21 @@
     <br>
     <div class="card mb-4 box-shadow">
       <div class="card-body">
-        <form>
+        <form id="publicForm">
+            <div class="form-group row">
+                <div class="col-sm-2 text-white">Name & Location</div>
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <label for="public-space-name" class="text-white">Name of Public Space</label>
+                        <input required type="name" class="form-control" id="public-space-name" aria-describedby="Name" name="Name of public space" placeholder="Enter public space's name">
+                      </div>
+                      <div class="form-group">
+                          <label for="public-space-address" class="text-white">Address of Public Space</label>
+                          <input required type="address" class="form-control" id="public-space-address" aria-describedby="Address" name="Address of public space" placeholder="Enter address of public space ex. '000 S Kihei Rd, Kihei, HI 96753'">
+                        </div>
+
+                  </div>
+                </div>
           <!-- Add This at the top of form: "Please Select All The Sustainable Practices for location to be listed on our Sustainable Map"-->
           <!--Look into making the buttons easier to click, so you can select around them not directly-->
           <!-- Add fields for restrooms, water refill, recycling?, shower-->
@@ -54,26 +71,27 @@
               <legend class="col-form-label col-sm-2 pt-0 text-white">Location Type</legend>
               <!--Remove Public and make new form including an address field and name for the public space-->
               <div class="col-sm-10">
-                <div class="form-check pb-1">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="loc-type-public" value="public">
-                  <label class="form-check-label text-white" for="loc-type-public">
-                    Public
-                  </label>
-                </div>
                 <!--Convert to horizontally displayed radio buttons-->
                 <div class="form-group">
-                  <select class="custom-select">
-                    <option value="1" selected>Beach</option>
-                    <option value="2">Park</option>
-                    <option value="3">Trail head</option>
-                    <option value="4">Bus Stop</option>
+                  <label for="access-type" class="text-white">Access Type</label>
+                  <select class="custom-select" id="access-type">
+                    <option value="Beach" selected>Beach</option>
+                    <option value="Park">Park</option>
+                    <option value="Trail Head">Trail head</option>
+                    <option value="Bus Stop">Bus Stop</option>
                   </select>
                 </div>
+                <div class="form-check pb-1">
+                    <input required class="form-check-input" type="radio" name="gridRadios" id="loc-type-public" value="Public">
+                    <label class="form-check-label text-white" for="loc-type-public">
+                      By selecting this field you are confirming this location is a public space & not a private business.
+                    </label>
+                  </div>
               </div>
             </div>
           </fieldset>
          
-          <button type="submit" class="btn">Submit & Pay</button>
+          <button type="submit" class="btn">Submit</button>
         </form>
       </div>
     </div>
