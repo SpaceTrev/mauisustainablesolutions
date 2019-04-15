@@ -2,6 +2,9 @@
 let public_space_name;
 let public_space_address;
 let location_type_public;
+let lifeguards;
+let restrooms;
+let recycling;
 
 const config = {
     apiKey: "AIzaSyA0HO8LK7fqmGeWlKZjVYjgQn0tSmMlcZI",
@@ -24,8 +27,10 @@ function submitPubToFirebase(e) {
     access_type = getSelectVal('access-type')
     public_space_name = getTextFieldVal('public-space-name');
     public_space_address = getTextFieldVal('public-space-address');
-
-    console.log(public_space_name, public_space_address, location_type_public, access_type);
+    lifeguards = getTextFieldVal('lifeguards');
+    restrooms = getTextFieldVal('restrooms');
+    recycling = getTextFieldVal('recycling');
+    console.log(public_space_name, public_space_address, location_type_public, access_type, lifeguards, restrooms, recycling);
 }
 
 function getInputVal(id) {
