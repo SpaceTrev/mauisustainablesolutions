@@ -30,15 +30,19 @@ body {
 .footer-link {
     margin-top: 10px;
 }
+
 .card-3 {
     margin-top: 20px;
 }
+
 .card-4 {
     margin-top: 20px;
 }
+
 .card-deck {
     margin-top: 80px !important;
 }
+
 .link-style {
     text-decoration: none !important;
     color: rgba(220, 220, 220, .8);
@@ -110,13 +114,12 @@ body {
 
 @media only screen and (max-width: 1040px) {
     .card {
-        padding: 0px !important; 
+        padding: 0px !important;
     }
     .card-deck {
         margin-top: 150px;
     }
 }
-
 
 @media only screen and (max-width: 767px) {
     .navbar-brand {
@@ -137,7 +140,6 @@ body {
     .card-title {
         font-size: 24px;
     }
-  
 }
 
 @media only screen and (max-width: 579px) {

@@ -1,9 +1,9 @@
-// if vs studio code gives you issues with es6 syntax uninstall eslint
 let public_space_name;
 let public_space_address;
 let location_type_public;
 let lifeguards;
 let restrooms;
+let showers;
 let recycling;
 
 const config = {
@@ -15,12 +15,10 @@ const config = {
     messagingSenderId: "258456429603"
 };
 
-
 firebase.initializeApp(config);
 let database = firebase.database();
 
 document.getElementById('publicForm').addEventListener('submit', submitPubToFirebase);
-// TODO: Add function to gather checkbox value as well as add to multi select data or make a key so it isn't just numbers
 function submitPubToFirebase(e) {
     e.preventDefault();
     location_type_public = getGridRadioVal('loc-type-public');
@@ -29,8 +27,22 @@ function submitPubToFirebase(e) {
     public_space_address = getTextFieldVal('public-space-address');
     lifeguards = getTextFieldVal('lifeguards');
     restrooms = getTextFieldVal('restrooms');
+    showers = getTextFieldVal('showers');
     recycling = getTextFieldVal('recycling');
-    console.log(public_space_name, public_space_address, location_type_public, access_type, lifeguards, restrooms, recycling);
+    console.log("form submitted successfully");
+    // console.log(public_space_name, public_space_address, location_type_public, access_type, lifeguards, restrooms, recycling);
+    let firebaseRef = database.ref("PublicAccess");
+    firebaseRef.push({
+        Name: public_space_name,
+        Address: public_space_address,
+        AccessType: access_type,
+        Lifeguards: lifeguards,
+        Restrooms: restrooms,
+        Recycling: recycling,
+        Showers: showers,
+        LocationTypePublic: location_type_public
+    })
+
 }
 
 function getInputVal(id) {
