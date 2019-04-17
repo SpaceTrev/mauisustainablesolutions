@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="../../../../../deps/bootstrap.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
+  <script src="../../../../../deps/jquery.min.js" type="text/javascript"></script>
+  <script src="../../../../../deps/bootstrap.js" type="text/javascript"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+
+  <title>Maui Sustainable Solutions</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand" href="../../../index.html">Maui Sustainable Solutions</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../../../../home/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../../mission/index.html">Mission</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../../contact/index.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../../../media/index.html">Media</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br /><br />
+  <div class="container">
+    <div style="border-color: #31b0d5 !important" class="container rounded border insta-border text mx-auto">
+      <h2 class="insta-text">Sustainability Map Sign Up</h2>
+    </div>
+    <br />
+    <div class="card mb-4 box-shadow">
+      <div class="card-body">
+        <form id="sustainForm">
+          <!-- Add This at the top of form: "Please Select All The Sustainable Practices for location to be listed on our Sustainable Map"-->
+          <!--Look into making the buttons easier to click, so you can select around them not directly-->
+          <!-- Local Type -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Name & Location</div>
+            <div class="col-sm-10">
+              <div class="form-group">
+                <label for="business-name" class="text-white">Name of Business</label>
+                <input required type="name" class="form-control" id="business-name" aria-describedby="Name"
+                  name="Business Name" placeholder="Enter Your Business' Name" />
+              </div>
+              <div class="form-group">
+                <label for="business-address" class="text-white">Address of Business</label>
+                <input required type="address" class="form-control" id="business-address" aria-describedby="Address"
+                  name="Business Address"
+                  placeholder="Enter Your Business' Address ex: '000 S Kihei Rd, Kihei, HI 96753'" />
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Contact Details</div>
+            <div class="col-sm-10">
+              <div class="form-group">
+                <label for="business-email" class="text-white">Email</label>
+                <input required type="email" class="form-control" id="business-email" aria-describedby="Email"
+                  name="Business Email" placeholder="Ex: joe@joe.meow" />
+              </div>
+              <div class="form-group">
+                <label for="business-phone" class="text-white">Phone Number</label>
+                <input required type="tel" class="form-control" id="business-phone" aria-describedby="Phone Number"
+                  name="Business Phone Number" placeholder="Enter Business' Phone Number" />
+              </div>
+              <div class="form-check pb-1">
+                <input class="form-check-input" type="checkbox" id="contact-included" name="Contact Included"
+                  value="Contact Included">
+                <label class="form-check-label text-white" for="contact-included">
+                    Permission to include the phone number & email provided on the sustainability map (check for yes)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+              <div class="col-sm-2 text-white">Social Media & Website</div>
+              <div class="col-sm-10">
+                <div class="form-group">
+                  <label for="business-social-media" class="text-white">Social Media Handle(s)</label>
+                  <input required type="text" class="form-control" id="business-social-media" aria-describedby="Social Media"
+                    name="Business Social(s)" placeholder="Ex: @MauiSustainableSolutions (if multiple list 'Instagram: @instahandle, Twitter: @twithandle, etc.'" />
+                </div>
+                <div class="form-group">
+                  <label for="business-website" class="text-white">Website</label>
+                  <input required type="url" class="form-control" id="business-website" aria-describedby="Website"
+                    name="Business Website" placeholder="Ex: https://www.MauiSustainableSolutions.com" />
+                </div>
+                <div class="form-check pb-1">
+                  <input class="form-check-input" type="checkbox" id="socials-included" name="Socials Included"
+                    value="Socials Included">
+                  <label class="form-check-label text-white" for="socials-included">
+                    Permission to include the website & social media handle(s) provided on the sustainability map (check for yes)
+                  </label>
+                </div>
+              </div>
+            </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0 text-white">
+                Location Type
+              </legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadio" id="loc-type-nonprofit"
+                    value="Nonprofit" />
+                  <label class="form-check-label text-white" for="loc-type-nonprofit">
+                    Nonprofit
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadio" id="loc-type-small-business"
+                    value="Small Business" />
+                  <label class="form-check-label text-white" for="loc-type-small-business">
+                    Small business
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadio" id="loc-type-corporate"
+                    value="Corporate" />
+                  <label class="form-check-label text-white" for="loc-type-corporate">
+                    Corporate
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadio" id="loc-type-government"
+                    value="Government" />
+                  <label class="form-check-label text-white" for="loc-type-government">
+                    Government
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Water -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Water</div>
+            <div class="col-sm-10">
+              <div class="form-group">
+                <label for="water-refill" class="text-white">Water bottle refill</label>
+                <select class="form-control" name="Water Refill" id="water-refill">
+                  <option value="Public" selected>Public</option>
+                  <option value="Customer Only">Customer only</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="water-types" class="text-white">Water type(s)</label>
+                <select multiple class="form-control" name="Water Types" id="water-types">
+                  <option value="Tap">Tap</option>
+                  <option value="Filtered">Filtered</option>
+                  <option value="Reverse Osmosis">Reverse osmosis</option>
+                  <option value="Alkaline">Alkaline</option>
+                  <option value="Distilled">Distilled</option>
+                  <option value="Rain">Rain</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Ice" id="water-ice" />
+                <label class="form-check-label text-white" for="water-ice">
+                  Ice
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Shower" id="water-shower" />
+                <label class="form-check-label text-white" for="water-shower">
+                  Shower
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recycling -->
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0 text-white">
+                Recycling
+              </legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadio" id="recycling-single"
+                    value="Single Stream" />
+                  <label class="form-check-label text-white" for="recycling-single">
+                    Single Stream
+                  </label>
+                </div>
+                <div class="form-group">
+                  <div class="form-check pb-1">
+                    <input class="form-check-input" type="radio" name="gridRadio" id="recycling-multi"
+                      value="Multi Stream" />
+                    <label class="form-check-label text-white" for="recycling-multi">
+                      Multi Stream
+                    </label>
+                  </div>
+                  <select multiple class="form-control" name="Recycling Types" id="recycling-multi-types">
+                    <option value="Plastic">Plastic</option>
+                    <option value="Glass">Glass</option>
+                    <option value="Aluminum">Aluminium</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Cardboard">Cardboard</option>
+                    <option value="E-waste">E-waste</option>
+                  </select>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadio" id="recycling-redemption"
+                    value="Redemption Center" />
+                  <label class="form-check-label text-white" for="recycling-redemption">
+                    Redemption Center
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Food and beverage -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Food and Beverage</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Food Container" id="food-container" />
+                <label class="form-check-label text-white" for="food-container">
+                  BYO food containers
+                </label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Food Container Retail"
+                    id="food-container-retail" />
+                  <label class="form-check-label text-white" for="food-container-retail">
+                    Retail reusable container
+                  </label>
+                </div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Food Vegan" id="food-vegan" />
+                <label class="form-check-label text-white" for="food-vegan">
+                  Vegan
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Food Vegetarian" id="food-vegetarian" />
+                <label class="form-check-label text-white" for="food-vegetarian">
+                  Vegetarian
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Food Local" id="food-local" />
+                <label class="form-check-label text-white" for="food-local">
+                  Locally grown/sourced
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Farm To Table" id="food-farm-table" />
+                <label class="form-check-label text-white" for="food-farm-table">
+                  Farm to table
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Farm Table Farm" id="farm-table-farm" />
+                <label class="form-check-label text-white" for="farm-table-farm">
+                  Farm-table-farm
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Fair Trade" id="fair-trade" />
+                <label class="form-check-label text-white" for="fair-trade">
+                  Fair trade
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Plastic Free" id="food-plastic-free" />
+                <label class="form-check-label text-white" for="food-plastic-free">
+                  Plastic free
+                </label>
+              </div>
+              <div class="form-check pb-1">
+                <input class="form-check-input" type="checkbox" name="Plastic Reduce" id="food-plastic-reduce" />
+                <label class="form-check-label text-white" for="food-plastic-reduce">
+                  Reduce plastic
+                </label>
+              </div>
+              <select multiple class="form-control" id="food-reduce-types">
+                <option value="Paper straw">Paper straw</option>
+                <option value="Compostable products">Compostable products</option>
+                <option value="Biodigradable products">Biodigradable products</option>
+                <option value="Recycled products">Recycled products</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Composting and green waste -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Composting and Green Waste</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Composting" id="composting" />
+                <label class="form-check-label text-white" for="composting">
+                  Composting
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Composting Green Waste"
+                  id="composting-green-waste" />
+                <label class="form-check-label text-white" for="composting-green-waste">
+                  Green Waste
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- EV Charging -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">EV Charging</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Ev Charge Lvl-1" id="ev-chargin-level-1" />
+                <label class="form-check-label text-white" for="ev-chargin-level-1">
+                  Level 1 - 1kW
+                  <p class="mb-1">8-15 hours to recharge</p>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Ev Charge Lvl-2" id="ev-chargin-level-2" />
+                <label class="form-check-label text-white" for="ev-chargin-level-2">
+                  Level 2 - 3kW to 20 kW, typically 6kW
+                  <p class="mb-1">3-8 hours to recharge</p>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Ev Charge Lvl-3" id="ev-chargin-level-3" />
+                <label class="form-check-label text-white" for="ev-chargin-level-3">
+                  Level 3 (BRCC) - typically 50kW, ocasionally 20kW
+                  <p class="mb-1">20 min to an hour to recharge</p>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Health -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Health</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Health Products" id="health-products" />
+                <label class="form-check-label text-white" for="health-products">
+                  Products
+                </label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Health Products-Local"
+                    id="health-products-local" />
+                  <label class="form-check-label text-white" for="health-products-local">
+                    Local
+                  </label>
+                </div>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Health Services" id="health-services" />
+                <label class="form-check-label text-white" for="health-services">
+                  Services
+                </label>
+              </div>
+              <div class="form-check pb-1">
+                <input class="form-check-input" type="checkbox" name="Health Welness" id="health-wellness" />
+                <label class="form-check-label text-white" for="health-wellness">
+                  Wellness
+                </label>
+              </div>
+              <select multiple class="form-control mb-2" name="Health Wellness Types" id="health-wellness-types">
+                <option value="Massage">Massage</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Naturopathy">Naturopathy</option>
+                <option value="Chiropractic">Chiropractic</option>
+                <option value="Physical Therapy">Physical therapy</option>
+                <option value="Acupuncture">Acupuncture</option>
+                <option value="Hydrotherapy">Hydrotherapy</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="form-check pb-1">
+                <input class="form-check-input" type="checkbox" name="Health Fitness" id="health-fitness" />
+                <label class="form-check-label text-white" for="health-fitness">
+                  Fitness
+                </label>
+              </div>
+              <select multiple class="form-control mb-2" name="Health Fitness Types" id="health-fitness-types">
+                <option value="Gym">Gym</option>
+                <option value="Yoga-Studio">Yoga studio</option>
+                <option value="Dancing">Dancing</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Health Medical" id="health-medical" />
+                <label class="form-check-label text-white" for="health-medical">
+                  Medical
+                </label>
+              </div>
+              <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" name="Health Other" id="health-other" />
+                <label class="form-check-label text-white" for="health-other">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nutrition -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Nutrition</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Nutrition Products" id="nutrition-products" />
+                <label class="form-check-label text-white" for="nutrition-products">
+                  Products
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Nutrition Services" id="nutrition-services" />
+                <label class="form-check-label text-white" for="nutrition-services">
+                  Services
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Nutrition Other" id="nutrition-other" />
+                <label class="form-check-label text-white" for="nutrition-other">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recreation -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Recreation</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Recreation Products" id="recreation-products" />
+                <label class="form-check-label text-white" for="recreation-products">
+                  Products
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Recreation Services" id="recreation-services" />
+                <label class="form-check-label text-white" for="recreation-services">
+                  Services
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Recreation Other" id="recreation-other" />
+                <label class="form-check-label text-white" for="recreation-other">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transportation -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Transportation</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Transportation Sharing"
+                  id="transportation-sharing" />
+                <label class="form-check-label text-white" for="transportation-sharing">
+                  Ride sharing
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Transportation Electric"
+                  id="transportation-electric" />
+                <label class="form-check-label text-white" for="transportation-electric">
+                  Electric
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Transportation Bus" id="transportation-bus" />
+                <label class="form-check-label text-white" for="transportation-bus">
+                  Bus stop
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Transportation Shuttle"
+                  id="transportation-shuttle" />
+                <label class="form-check-label text-white" for="transportation-shuttle">
+                  Shuttle service
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Transportation Airport"
+                  id="transportation-airport" />
+                <label class="form-check-label text-white" for="transportation-airport">
+                  Airport pickup/drop off
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Transportation Other" id="transportation-other" />
+                <label class="form-check-label text-white" for="transportation-other">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Energy -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Energy</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Solar" id="energy-solar" />
+                <label class="form-check-label text-white" for="energy-solar">
+                  Solar
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Battery " id="energy-battery" />
+                <label class="form-check-label text-white" for="energy-battery">
+                  Battery
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Biodiesel" id="energy-biodiesel" />
+                <label class="form-check-label text-white" for="energy-biodiesel">
+                  Biodiesel
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Hydrogen" id="energy-hydrogen" />
+                <label class="form-check-label text-white" for="energy-hydrogen">
+                  Hydrogen
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Wind" id="energy-wind" />
+                <label class="form-check-label text-white" for="energy-wind">
+                  Wind
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Hydroelectric" id="energy-hydroelectric" />
+                <label class="form-check-label text-white" for="energy-hydroelectric">
+                  Hydroelectric
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Energy Products" id="energy-products" />
+                <label class="form-check-label text-white" for="energy-products">
+                  Products
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Energy Services" id="energy-services" />
+                <label class="form-check-label text-white" for="energy-services">
+                  Services
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">Education</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Education Info" id="education-info" />
+                <label class="form-check-label text-white" for="education-info">
+                  Information
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Education Events" id="education-events" />
+                <label class="form-check-label text-white" for="education-events">
+                  Events
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Education Products" id="education-products" />
+                <label class="form-check-label text-white" for="education-products">
+                  Products
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="Education services" id="education-services" />
+                <label class="form-check-label text-white" for="education-services">
+                  Services
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restroom -->
+          <div class="form-group row">
+            <div class="col-sm-2 text-white">
+              <label for="restroom" class="text-white">Restroom</label>
+            </div>
+            <div class="col-sm-10">
+              <select class="form-control" name="Restroom Type" id="restroom">
+                <option value="Public" selected>Public</option>
+                <option value="Customer Only">Customer only</option>
+              </select>
+            </div>
+          </div>
+          <button id="submit" class="btn">Submit & Pay</button>
+          <!-- <button type="button" id="submit" class="btn ro-subscribe-btn"
+            onclick="window.location='https://maui-sustainable-solutions.myshopify.com/tools/checkout/buy_button/add_to_cart?p=3487791415382&v=27889088954454&g=96749&fn=1&ft=3&dp=$150.00&rdp=1&rup=15000'">Subscribe
+            Now!</button> -->
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <br /><br />
+  <div class="mastfoot">
+    <div class="inner">
+      <p class="footer-link">
+        Built for
+        <a class="link-style" href="MauiSustainable.html">MauiSustainableSolutions
+        </a>
+        by
+        <a class="link-style" href="https//spacetrev.github.io">SpaceTrev</a>.
+      </p>
+    </div>
+  </div>
+  <script src="./js/logic.js"></script>
+</body>
+
+</html>
